@@ -7,7 +7,11 @@ export const ToDoList = props => {
 	const result = arr.map((item, index) => (
 		<li key={index}>
 			{item}
-			<button onClick={() => arr.filter(el => el != arr[index])}>
+			<button
+				onClick={() => {
+					let newArr = arr.filter(el => el != arr[index]);
+					setArr(newArr);
+				}}>
 				X
 			</button>
 		</li>
