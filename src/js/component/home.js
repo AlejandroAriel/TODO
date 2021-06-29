@@ -2,7 +2,7 @@ import React from "react";
 
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
-import { ToDoList, Lista } from "./list.js";
+import { ToDoList } from "./list.js";
 //create your first component
 export function Home() {
 	return (
@@ -15,15 +15,6 @@ export function Home() {
 				{" "}
 				<ToDoList />{" "}
 			</ul>
-
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
 		</div>
 	);
 }

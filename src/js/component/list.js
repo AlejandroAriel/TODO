@@ -12,7 +12,7 @@ export const ToDoList = props => {
 					let newArr = arr.filter(el => el != arr[index]);
 					setArr(newArr);
 				}}>
-				X
+				🗑️
 			</button>
 		</li>
 	));
@@ -28,7 +28,7 @@ export const ToDoList = props => {
 				onClick={() => {
 					setArr([...arr, inputValue]);
 				}}>
-				enviar
+				➕
 			</button>
 			<ul>{result}</ul>
 		</>
