@@ -1,36 +1,47 @@
 import React, { useState } from "react";
 import PropTypes, { array } from "prop-types";
+import { ListGroup, Container, Row, Col } from "react-bootstrap";
 
 export const ToDoList = props => {
 	const [arr, setArr] = useState([]);
 	const [inputValue, setInputValue] = useState("");
+
 	const result = arr.map((item, index) => (
-		<li key={index}>
+		<ListGroup.Item as="li" active key={index}>
 			{item}
 			<button
 				onClick={() => {
 					let newArr = arr.filter(el => el != arr[index]);
 					setArr(newArr);
+					console.log(arr[index]);
 				}}>
 				🗑️
 			</button>
-		</li>
+		</ListGroup.Item>
 	));
 	return (
 		<>
-			<input
-				onChange={e => setInputValue(e.target.value)}
-				className="form-control form-control-lg"
-				type="text"
-				placeholder=".form-control-lg"></input>
+			<Container>
+				<Row>
+					<Col>
+						<input
+							onChange={e => setInputValue(e.target.value)}
+							className="form-control form-control-lg"
+							type="text"
+							placeholder=".form-control-lg"></input>
 
-			<button
-				onClick={() => {
-					setArr([...arr, inputValue]);
-				}}>
-				➕
-			</button>
-			<ul>{result}</ul>
+						<button
+							onClick={() => {
+								if (inputValue != "") {
+									setArr([...arr, inputValue]);
+								}
+							}}>
+							➕
+						</button>
+						<ListGroup as="ul">{result}</ListGroup>
+					</Col>
+				</Row>
+			</Container>
 		</>
 	);
 };

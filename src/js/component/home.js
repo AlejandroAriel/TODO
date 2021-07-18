@@ -7,10 +7,7 @@ import { ToDoList } from "./list.js";
 export function Home() {
 	return (
 		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
+			<h1>TODO LIST !!!</h1>
 			<ul>
 				{" "}
 				<ToDoList />{" "}
