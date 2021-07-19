@@ -32,7 +32,11 @@ export const ToDoList = props => {
 
 						<button
 							onClick={() => {
-								if (inputValue != "") {
+								
+								if (
+									inputValue.replaceAll(" ", "") != "" &&
+									!arr.includes(inputValue)
+								) {
 									setArr([...arr, inputValue]);
 								}
 							}}>
